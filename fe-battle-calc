@@ -1027,13 +1027,13 @@ if battle_ready == "yes":
                           
                   # Attacker misses
 
+                  else:
+                      print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
+          
+              # Attacker is at max level
+
               else:
                   print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
-          
-          # Attacker is at max level
-
-          else:
-              print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
 
       # Defender
       
