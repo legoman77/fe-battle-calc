@@ -1674,7 +1674,7 @@ if battle_ready == "yes":
                   else:
                     print(defender_name + " now has " + str(defender_exp) + " experience points!")
           
-              # Defender is at max level
+              # efender is at max level
           
               else:
                 print(defender_name + " now has " + str(defender_exp) + " experience points!")
