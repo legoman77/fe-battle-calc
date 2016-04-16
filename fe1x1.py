@@ -41,25 +41,25 @@ def attack():
     global defender_strength 
     global defender_magic 
     global defender_skill 
-defender_speed 
-defender_luck 
-defender_defense 
-defender_resistance 
-defender_weapon_type 
-defender_weapon_uses 
-defender_weapon_might 
-defender_weapon_hit 
-defender_weapon_crit 
-defender_weapon_range 
-defender_weapon_effect
-defender_hp_growth 
-defender_strength_growth 
-defender_magic_growth 
-defender_skill_growth 
-defender_speed_growth 
-defender_luck_growth 
-defender_defense_growth
-defender_resistance_growth
+    global defender_speed 
+    global defender_luck 
+    global defender_defense 
+    global defender_resistance 
+    global defender_weapon_type 
+    global defender_weapon_uses 
+    global defender_weapon_might 
+    global defender_weapon_hit 
+    global defender_weapon_crit 
+    global defender_weapon_range 
+    global defender_weapon_effect
+    global defender_hp_growth 
+    global defender_strength_growth 
+    global defender_magic_growth 
+    global defender_skill_growth 
+    global defender_speed_growth 
+    global defender_luck_growth 
+    global defender_defense_growth
+    global defender_resistance_growth
 
       
       # Attacker's attack
