@@ -2,6 +2,7 @@
 
 import colors as c
 import random
+import fe1x1
 
 # Attacker's stats
 
@@ -260,6 +261,11 @@ if battle_ready == "yes":
   # Attacker and defender attack once
 
   if attacker_attack_times == 1 and defender_attack_times == 1:
+      fe1x1.attack()
+      
+  # Attacker attacks twice, defender attacks once
+      
+  elif attacker_attack_times == 2 and defender_attack_times == 1:
       
       # Attacker's attack
       
