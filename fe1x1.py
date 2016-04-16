@@ -2,6 +2,66 @@ import colors as c
 import random
 
 def attack():
+    global attacker_name
+    global attacker_boss
+    global attacker_class 
+    global attacker_current_hp 
+    global attacker_max_hp 
+    global attacker_exp 
+    global attacker_level 
+    global attacker_strength
+    global attacker_magic
+    global attacker_skill
+    global attacker_speed
+    global attacker_luck
+    global attacker_defense
+    global attacker_resistance
+    global attacker_weapon_type
+    global attacker_weapon_uses
+    global attacker_weapon_might
+    global attacker_weapon_hit
+    global attacker_weapon_crit
+    global attacker_weapon_range
+    global attacker_weapon_effect
+    global attacker_hp_growth
+    global attacker_strength_growth
+    global attacker_magic_growth
+    global attacker_skill_growth
+    global attacker_speed_growth
+    global attacker_luck_growth
+    global attacker_defense_growth
+    global attacker_resistance_growth
+    global defender_name 
+    global defender_boss 
+    global defender_class
+    global defender_current_hp 
+    global defender_max_hp 
+    global defender_exp 
+    global defender_level 
+    global defender_strength 
+    global defender_magic 
+    global defender_skill 
+defender_speed 
+defender_luck 
+defender_defense 
+defender_resistance 
+defender_weapon_type 
+defender_weapon_uses 
+defender_weapon_might 
+defender_weapon_hit 
+defender_weapon_crit 
+defender_weapon_range 
+defender_weapon_effect
+defender_hp_growth 
+defender_strength_growth 
+defender_magic_growth 
+defender_skill_growth 
+defender_speed_growth 
+defender_luck_growth 
+defender_defense_growth
+defender_resistance_growth
+
+      
       # Attacker's attack
       
       # Attacker's crit roll
