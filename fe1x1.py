@@ -1,3 +1,6 @@
+import colors as c
+import random
+
 def attack():
       # Attacker's attack
       
