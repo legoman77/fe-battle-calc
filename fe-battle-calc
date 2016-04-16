@@ -259,9 +259,9 @@ if battle_ready == "yes":
 
   # Attacker and defender attack once
 
-  # Attacker's attack
-
   if attacker_attack_times == 1 and defender_attack_times == 1:
+      
+      # Attacker's attack
       
       # Attacker's crit roll
 
