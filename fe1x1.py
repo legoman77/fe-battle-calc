@@ -60,6 +60,22 @@ def attack():
     global defender_luck_growth 
     global defender_defense_growth
     global defender_resistance_growth
+    global attacker_class_power
+    global attacker_class_bonus_a
+    global attacker_class_bouns_b
+    global attacker_boss_bonus
+    global attacker_thief_bonus
+    global defender_class_power
+    global defender_class_bonus_a
+    global defender_class_bonus_b
+    global defender_boss_bonus
+    global defender_thief_bonus
+    global attacker_attack_times
+    global defender_attack_times
+    global attacker_hit_rate
+    global defender_hit_rate
+    global attacker_evade
+    global defender_evade
 
       
       # Attacker's attack
