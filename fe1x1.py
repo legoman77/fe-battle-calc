@@ -76,8 +76,23 @@ def attack():
     global defender_hit_rate
     global attacker_evade
     global defender_evade
-
-      
+    global attacker_accuracy
+    global defender_accuracy
+    global attacker_attack_power
+    global defender_attack_power
+    global attacker_defense_power
+    global defender_defense_power
+    global attacker_damage
+    global defender_damage
+    global attacker_crit_rate
+    global defender_crit_rate
+    global attacker_crit_evade
+    global defender_crit_evade
+    global attacker_crit_chance
+    global defender_crit_chance
+    global attacker_crit_damage
+    global defender_crit_damage
+    
       # Attacker's attack
       
       # Attacker's crit roll
