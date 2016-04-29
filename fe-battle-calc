@@ -309,17 +309,14 @@ if battle_ready == "yes":
   # Attacker and defender attack once
 
   if attacker_attack_times == 1 and defender_attack_times == 1:
-      # fe1x1.attack()
-      pass
+      fe1x1.attack()
       
   # Attacker attacks twice, defender attacks once
       
   elif attacker_attack_times == 2 and defender_attack_times == 1:
-      # fe2x1.attack()
-      pass
+      fe2x1.attack()
       
   # Attacker attacks once, defender attacks twice
   
   else:
-      # fe1x2.attack()
-      pass
+      fe1x2.attack()
