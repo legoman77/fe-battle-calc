@@ -2,9 +2,9 @@
 
 import colors as c
 import random
-# import fe1x1
-# import fe2x1
-# import fe1x2
+import fe1x1
+import fe2x1
+import fe1x2
 
 # Attacker's stats
 
