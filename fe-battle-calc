@@ -1836,50 +1836,50 @@ if battle_ready == "yes":
       
       if attacker_current_hp > 0:
         
-        if defender_current_hp > 0:
+          if defender_current_hp > 0:
       
-            attacker_crit_roll_2 = random.randint(1,100)
+              attacker_crit_roll_2 = random.randint(1,100)
+      
+              # Attacker gets a crit
+      
+              if attacker_crit_roll_2 <= attacker_crit_chance:
+                  print(attacker_name + " got a critical hit!")
+                  attacker_hit_roll_2 = random.randint(1,100)
+      
+                  # Attacker hits crit
+      
+                  if attacker_hit_roll_2 <= attacker_accuracy:
+                      defender_current_hp = defender_current_hp - attacker_crit_damage
+                      attacker_weapon_uses -= 1
+                      print(defender_name + " took " + str(attacker_crit_damage) + " damage!")
+                      if attacker_weapon_uses <= 0:
+                          print(attacker_name + "'s weapon broke!")
+      
+                  # Attacker misses crit
+      
+                  else:
+                      print(attacker_name + " missed!")
     
-            # Attacker gets a crit
-    
-            if attacker_crit_roll_2 <= attacker_crit_chance:
-                print(attacker_name + " got a critical hit!")
-                attacker_hit_roll_2 = random.randint(1,100)
-    
-                # Attacker hits crit
-    
-                if attacker_hit_roll_2 <= attacker_accuracy:
-                    defender_current_hp = defender_current_hp - attacker_crit_damage
-                    attacker_weapon_uses -= 1
-                    print(defender_name + " took " + str(attacker_crit_damage) + " damage!")
-                    if attacker_weapon_uses <= 0:
-                        print(attacker_name + "'s weapon broke!")
-    
-                # Attacker misses crit
-    
-                else:
-                    print(attacker_name + " missed!")
-  
-            # Attacker doesn't get a crit
-    
-            else:
-                attacker_hit_roll_2 = random.randint(1,100)
-    
-                # Attacker hits
-    
-                if attacker_hit_roll_2 <= attacker_accuracy:
-                    defender_current_hp = defender_current_hp - attacker_damage
-                    print(attacker_name + " attacks!")
-                    print(defender_name + " took " + str(attacker_damage) + " damage!")
-                    attacker_weapon_uses -= 1
-                    if attacker_weapon_uses <= 0:
-                        print(attacker_name + "'s weapon broke!")
-    
-                # Attacker misses
-    
-                else:
-                    print(attacker_name + " missed!")
-          
+              # Attacker doesn't get a crit
+      
+              else:
+                  attacker_hit_roll_2 = random.randint(1,100)
+      
+                  # Attacker hits
+      
+                  if attacker_hit_roll_2 <= attacker_accuracy:
+                      defender_current_hp = defender_current_hp - attacker_damage
+                      print(attacker_name + " attacks!")
+                      print(defender_name + " took " + str(attacker_damage) + " damage!")
+                      attacker_weapon_uses -= 1
+                      if attacker_weapon_uses <= 0:
+                          print(attacker_name + "'s weapon broke!")
+      
+                  # Attacker misses
+      
+                  else:
+                      print(attacker_name + " missed!")
+            
           # Defender is dead
           
           else:
