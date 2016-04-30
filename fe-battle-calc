@@ -1724,8 +1724,8 @@ if battle_ready == "yes":
           
               # Defender is at max level
           
-            # else:
-                # print(defender_name + " now has " + str(defender_exp) + " experience points!")
+              else:
+                  print(defender_name + " now has " + str(defender_exp) + " experience points!")
 
   # Attacker attacks twice, defender attacks once
       
@@ -3207,8 +3207,8 @@ if battle_ready == "yes":
           
               # Defender is at max level
           
-            # else:
-                # print(defender_name + " now has " + str(defender_exp) + " experience points!")
+              else:
+                  print(defender_name + " now has " + str(defender_exp) + " experience points!")
 
       
   # Attacker attacks once, defender attacks twice
