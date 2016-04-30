@@ -1,0 +1,322 @@
+#!/usr/bin/env python3
+
+import colors as c
+import random
+# import fe2x1
+# import fe1x2
+
+# Attacker's stats
+
+print(c.clear)
+print("Welcome to the Fire Emblem Battle Calculator!")
+print("Please enter the attacker's stats.")
+attacker_name = input("Attacker's name > ")
+attacker_boss = input("Is this unit a boss? > ").lower()
+attacker_class = input("Attacker's class > ").lower()
+attacker_current_hp = int(input("Attacker's current HP > "))
+attacker_max_hp = int(input("Attacker's max HP > "))
+attacker_exp = int(input("Attacker's current EXP > "))
+attacker_level = int(input("Attacker's level > "))
+attacker_strength = int(input("Attacker's Strength > "))
+attacker_magic = int(input("Attacker's Magic > "))
+attacker_skill = int(input("Attacker's Skill > "))
+attacker_speed = int(input("Attacker's Speed > "))
+attacker_luck = int(input("Attacker's Luck > "))
+attacker_defense = int(input("Attacker's Defense > "))
+attacker_resistance = int(input("Attacker's Resistance > "))
+attacker_weapon_type = input("Attacker's weapon type > ").lower()
+attacker_weapon_uses = int(input("Attacker's weapon's remaining uses > "))
+attacker_weapon_might = int(input("Attacker's weapon's Might > "))
+attacker_weapon_hit = int(input("Attacker's weapon's Hit % > "))
+attacker_weapon_crit = int(input("Attacker's weapon's Critical Rate > "))
+attacker_weapon_range = input("Attacker's weapon's Range > ")
+attacker_weapon_effect = input("Attacker's weapon's added effect(s) > ").lower()
+attacker_hp_growth = int(input("Attacker's HP growth > "))
+attacker_strength_growth = int(input("Attacker's Strength growth > "))
+attacker_magic_growth = int(input("Attacker's Magic growth > "))
+attacker_skill_growth = int(input("Attacker's Skill growth > "))
+attacker_speed_growth = int(input("Attacker's Speed growth > "))
+attacker_luck_growth = int(input("Attacker's Luck growth > "))
+attacker_defense_growth = int(input("Attacker's Defense growth > "))
+attacker_resistance_growth = int(input("Attacker's Resistance growth > "))
+
+# Attacker's attack type (physical or magical)
+
+if attacker_weapon_type == "tome":
+  attacker_strength = attacker_magic
+
+# Defender's stats
+
+print(c.clear)
+print("Please enter the defender's stats.")
+defender_name = input("Defender's name > ")
+defender_boss = input("Is this unit a boss? > ").lower()
+defender_class = input("Defender's class > ").lower()
+defender_current_hp = int(input("Defender's current HP > "))
+defender_max_hp = int(input("Defender's max HP > "))
+defender_exp = int(input("Defender's current EXP > "))
+defender_level = int(input("Defender's level > "))
+defender_strength = int(input("Defender's Strength > "))
+defender_magic = int(input("Defender's Magic > "))
+defender_skill = int(input("Defender's Skill > "))
+defender_speed = int(input("Defender's Speed > "))
+defender_luck = int(input("Defender's Luck > "))
+defender_defense = int(input("Defender's Defense > "))
+defender_resistance = int(input("Defender's Resistance > "))
+defender_weapon_type = input("Defender's weapon type > ").lower()
+defender_weapon_uses = int(input("Defender's weapon's remaining uses > "))
+defender_weapon_might = int(input("Defender's weapon's Might > "))
+defender_weapon_hit = int(input("Defender's weapon's Hit % > "))
+defender_weapon_crit = int(input("Defender's weapon's Critical Rate > "))
+defender_weapon_range = input("Defender's weapon's Range > ")
+defender_weapon_effect = input("Defender's weapon's added effect(s) > ").lower()
+defender_hp_growth = int(input("Attacker's HP growth > "))
+defender_strength_growth = int(input("Attacker's Strength growth > "))
+defender_magic_growth = int(input("Attacker's Magic growth > "))
+defender_skill_growth = int(input("Attacker's Skill growth > "))
+defender_speed_growth = int(input("Attacker's Speed growth > "))
+defender_luck_growth = int(input("Attacker's Luck growth > "))
+defender_defense_growth = int(input("Attacker's Defense growth > "))
+defender_resistance_growth = int(input("Attacker's Resistance growth > "))
+
+# Defender's attack type (physical or magical) and attacker's defense type (physical or magical)
+
+if defender_weapon_type == "tome":
+  defender_strength = defender_magic
+  attacker_defense = attacker_resistance
+
+# Defender's defense type (physical or magical)
+
+if attacker_weapon_type == "tome":
+  defender_defense = defender_resistance
+
+# Attacker's experience-related formulas
+
+  # Class Power
+
+if attacker_class == "villager" or attacker_class == "entombed" or attacker_class == "mirage":
+  attacker_class_power = 1
+if attacker_class == "cleric" or attacker_class == "priest" or attacker_class == "soldier" or attacker_class == "troubadour" or attacker_class == "thief" or attacker_class == "dancer" or attacker_class == "taguel" or attacker_class == "manakete":
+  attacker_class_power = 2
+elif attacker_class == "grima":
+  attacker_class_power = 5
+else:
+  attacker_class_power = 3
+
+  # Class Bonus A
+
+if attacker_class == "great lord" or attacker_class == "grandmaster" or attacker_class == "paladin" or attacker_class == "general" or attacker_class == "great knight" or attacker_class == "swordmaster" or attacker_class == "trickster" or attacker_class == "assassin" or attacker_class == "berserker" or attacker_class == "warrior" or attacker_class == "hero" or attacker_class == "sniper" or attacker_class == "bow knight" or attacker_class == "sorcerer" or attacker_class == "sage" or attacker_class == "dark knight" or attacker_class == "war cleric" or attacker_class == "war monk" or attacker_class == "valkyrie" or attacker_class == "falcon knight" or attacker_class == "dark flier" or attacker_class == "wyvern lord" or attacker_class == "griffon rider" or attacker_class == "entombed":
+  attacker_class_bonus_a = 20
+else:
+  attacker_class_bonus_a = 0
+
+  # Class Bonus B
+
+if attacker_class == "assassin" or defender_class == "trickster" or defender_class == "war monk" or attacker_class == "war cleric" or attacker_class == "valkyrie":
+  attacker_class_bonus_b = 40
+elif attacker_class == "great lord" or attacker_class == "grandmaster" or attacker_class == "paladin" or attacker_class == "general" or attacker_class == "great knight" or attacker_class == "swordmaster" or attacker_class == "berserker" or attacker_class == "warrior" or attacker_class == "hero" or attacker_class == "sniper" or attacker_class == "bow knight" or attacker_class == "sorcerer" or attacker_class == "sage" or attacker_class == "dark knight" or attacker_class == "falcon knight" or attacker_class == "dark flier" or attacker_class == "wyvern lord" or attacker_class == "griffon rider" or attacker_class == "entombed":
+  attacker_class_bonus_b = 60
+else:
+  attacker_class_bonus_b = 0
+
+  # Boss Bonus
+
+if attacker_boss == "yes":
+  attacker_boss_bonus = 40
+else:
+  attacker_boss_bonus = 0
+
+  # Thief Bonus
+
+if attacker_class == "thief" or attacker_class == "assassin" or attacker_class == "trickster":
+  attacker_thief_bonus = 20
+else:
+  attacker_thief_bonus = 0
+
+# Defender's experience-related formulas
+
+  # Class Power
+
+if defender_class == "villager" or defender_class == "entombed" or defender_class == "mirage":
+  defender_class_power = 1
+if defender_class == "cleric" or defender_class == "priest" or defender_class == "soldier" or defender_class == "troubadour" or defender_class == "thief" or defender_class == "dancer" or defender_class == "taguel" or defender_class == "manakete":
+  defender_class_power = 2
+elif defender_class == "grima":
+  defender_class_power = 5
+else:
+  defender_class_power = 3
+
+  # Class Bonus A
+
+if defender_class == "great lord" or defender_class == "grandmaster" or defender_class == "paladin" or defender_class == "general" or defender_class == "great knight" or defender_class == "swordmaster" or defender_class == "trickster" or defender_class == "assassin" or defender_class == "berserker" or defender_class == "warrior" or defender_class == "hero" or defender_class == "sniper" or defender_class == "bow knight" or defender_class == "sorcerer" or defender_class == "sage" or defender_class == "dark knight" or defender_class == "war cleric" or defender_class == "war monk" or defender_class == "valkyrie" or defender_class == "falcon knight" or defender_class == "dark flier" or defender_class == "wyvern lord" or defender_class == "griffon rider" or defender_class == "entombed":
+  defender_class_bonus_a = 20
+else:
+  defender_class_bonus_a = 0
+
+  # Class Bonus B
+
+if defender_class == "assassin" or defender_class == "trickster" or defender_class == "war monk" or defender_class == "war cleric" or defender_class == "valkyrie":
+  defender_class_bonus_b = 40
+elif defender_class == "great lord" or defender_class == "grandmaster" or defender_class == "paladin" or defender_class == "general" or defender_class == "great knight" or defender_class == "swordmaster" or defender_class == "berserker" or defender_class == "warrior" or defender_class == "hero" or defender_class == "sniper" or defender_class == "bow knight" or defender_class == "sorcerer" or defender_class == "sage" or defender_class == "dark knight" or defender_class == "valkyrie" or defender_class == "falcon knight" or defender_class == "dark flier" or defender_class == "wyvern lord" or defender_class == "griffon rider" or defender_class == "entombed":
+  defender_class_bonus_b = 60
+else:
+  defender_class_bonus_b = 0
+
+  # Boss Bonus
+
+if defender_boss == "yes":
+  defender_boss_bonus = 40
+else:
+  defender_boss_bonus = 0
+
+  # Thief Bonus
+
+if defender_class == "thief" or defender_class == "assassin" or defender_class == "trickster":
+  defender_thief_bonus = 20
+else:
+  defender_thief_bonus = 0
+
+# Battle Formulas
+
+# Weapon Triangle
+
+if attacker_weapon_type == "sword" and defender_weapon_type == "axe" or attacker_weapon_type == "axe" and defender_weapon_type == "lance" or attacker_weapon_type == "lance" and defender_weapon_type == "sword":
+    attacker_weapon_might += 1
+    defender_weapon_might -= 1
+    attacker_weapon_hit += 15
+    defender_weapon_hit -= 15
+    
+if attacker_weapon_type == "axe" and defender_weapon_type == "sword" or attacker_weapon_type == "lance" and defender_weapon_type == "axe" or attacker_weapon_type == "sword" and defender_weapon_type == "lance":
+    attacker_weapon_might -= 1
+    defender_weapon_might += 1
+    attacker_weapon_hit -= 15
+    defender_weapon_hit += 15
+
+# Number of Attacks
+
+if attacker_speed >= defender_speed + 5:
+  attacker_attack_times = 2
+  defender_attack_times = 1
+elif defender_speed >= attacker_speed + 5:
+  attacker_attack_times = 1
+  defender_attack_times = 2
+else:
+  attacker_attack_times = 1
+  defender_attack_times = 1
+
+# Hit Rate
+
+attacker_hit_rate = attacker_weapon_hit + attacker_skill * 2 + int(attacker_luck / 2)
+defender_hit_rate = defender_weapon_hit + defender_skill * 2 + int(defender_luck / 2)
+
+# Evade
+
+attacker_evade = attacker_speed + int(attacker_luck / 2)
+defender_evade = defender_speed + int(defender_luck / 2)
+
+# Accuracy
+
+attacker_accuracy = attacker_hit_rate - defender_evade
+defender_accuracy = defender_hit_rate - defender_evade
+
+# Attack Power
+
+attacker_attack_power = attacker_strength + attacker_weapon_might
+defender_attack_power = defender_strength + defender_weapon_might
+
+# Defense Power
+
+attacker_defense_power = attacker_defense
+defender_defense_power = defender_defense
+
+# Damage
+
+attacker_damage = attacker_attack_power - defender_defense_power
+defender_damage = defender_attack_power - attacker_defense_power
+
+# Critical Rate
+
+attacker_crit_rate = attacker_weapon_crit + int(attacker_skill / 2)
+defender_crit_rate = defender_weapon_crit + int(defender_skill / 2)
+
+# Critical Evade
+
+attacker_crit_evade = attacker_luck
+defender_crit_evade = defender_luck
+
+# Critical Chance
+
+attacker_crit_chance = attacker_crit_rate - defender_crit_evade
+defender_crit_chance = defender_crit_rate - attacker_crit_evade
+
+# Critical Damage
+
+attacker_crit_damage = attacker_damage * 3
+defender_crit_damage = defender_damage * 3
+
+# Stat Limiters
+
+if attacker_accuracy < 0:
+    attacker_accuracy = 0
+    
+if attacker_accuracy > 100:
+    attacker_accuracy = 100
+    
+if defender_accuracy < 0:
+    defender_accuracy = 0
+    
+if defender_accuracy > 100:
+    defender_accuracy = 100
+    
+if attacker_damage < 0:
+    attacker_damage = 0
+    
+if defender_damage < 0:
+    defender_damage = 0
+    
+if attacker_crit_chance < 0:
+    attacker_crit_chance = 0
+    
+if attacker_crit_chance > 100:
+    attacker_crit_chance = 100
+    
+if defender_crit_chance < 0:
+    defender_crit_chance = 0
+    
+if defender_crit_chance > 100:
+    defender_crit_chance = 100
+
+# Battle Preview
+
+print(c.clear)
+print("Battle Preview:")
+print(attacker_name + ":")
+print("Damage: " + str(attacker_damage) + "x" + str(attacker_attack_times))
+print("Accuracy: " + str(attacker_accuracy) + "%")
+print("Crit: " + str(attacker_crit_chance) + "%")
+print(defender_name + ":")
+print("Damage: " + str(defender_damage) + "x" + str(defender_attack_times))
+print("Accuracy: " + str(defender_accuracy) + "%")
+print("Crit: " + str(defender_crit_chance) + "%")
+
+# Battle
+
+battle_ready = input("Initiate the battle? > ")
+if battle_ready == "yes":
+  print(c.clear)
+
+  # Attacker and defender attack once
+
+  if attacker_attack_times == 1 and defender_attack_times == 1:
+      import fe1x1
+      fe1x1.attack()
+      
+  # Attacker attacks twice, defender attacks once
+      
+  elif attacker_attack_times == 2 and defender_attack_times == 1:
+      fe2x1.attack()
+      
+  # Attacker attacks once, defender attacks twice
+  
+  else:
+      fe1x2.attack()
