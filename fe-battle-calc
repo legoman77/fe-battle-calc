@@ -3361,7 +3361,7 @@ if battle_ready == "yes":
           
           else:
               print(attacker_name + " has died.")
-              print(defeneder_name + " wins!")
+              print(defender_name + " wins!")
   
       # Defender is dead
 
