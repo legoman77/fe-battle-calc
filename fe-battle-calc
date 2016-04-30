@@ -218,7 +218,7 @@ defender_evade = defender_speed + int(defender_luck / 2)
 # Accuracy
 
 attacker_accuracy = attacker_hit_rate - defender_evade
-defender_accuracy = defender_hit_rate - defender_evade
+defender_accuracy = defender_hit_rate - attacker_evade
 
 # Attack Power
 
