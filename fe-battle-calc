@@ -3360,13 +3360,13 @@ if battle_ready == "yes":
           # Attacker is dead
           
           else:
-              pass
+              print(attacker_name + " has died.")
+              print(defeneder_name + " wins!")
   
       # Defender is dead
 
       else:
-          print(defender_name + " has died.")
-          print(attacker_name + " wins!")
+          pass
 
       # Attacker's remaining HP
 
